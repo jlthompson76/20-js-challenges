@@ -1,10 +1,10 @@
-// Here are a list 20 of JavaScript challenges for you to complete. Write your answer below each challenge.
+// Here is a list of 20 JavaScript challenges for you to complete. Write your answer below each challenge.
 
-// Be sure to check to see if they work by using console.log, debugging or any method we learned so far that will help you
+// Be sure to check to see if they work by using console.log, debugging or any method we learned so far that will help you.
 
 // ____________________________________________________________________________
 
-// 1: Declare four variables called eat, drink, sleep, and lives . Assign the values "chicken", "bubble tea", false, and 9 to each of them respectively.  The variable sleep should not be allowed to be assigned a different value.  Note the values are not all strings.
+// 1: Declare four variables called eat, drink, sleep, and lives. Assign the values "chicken", "bubble tea", false, and 9 to each of them respectively. The variable sleep should not be allowed to be assigned a different value. Note the values are not all strings.
 
 console.log(`Challenge #1`);
 
@@ -35,59 +35,176 @@ function placeName(name, place) {
 // Chinese => nihao
 // Italian => ciao
 // Ex.
-// greetings("Spanish");  //would return "hola"
+// greetings("Spanish");  // would return "hola"
 
+console.log(`Challenge #3`);
 
+greetings("French");
+
+// JLT Note: using if/else if conditional statements didn't result in the correct greeting, so I changed to switch per a suggestion from another student
+// I also liked how Khalid solved the problem, here is his code:
+//
+// function greetings(lang) {
+//     let listOfGreetings = {
+//     Spanish: 'hola',
+//     Japanese: 'konichiwa',
+//     French: 'bonjour',
+//     Chinese: 'nihao',
+//     Italian: 'ciao',
+//     }
+//     return listOfGreetings[lang]
+//     }
+
+function greetings(language) {
+    console.log(language);
+    let hello;
+    switch (language) {
+        case "Spanish":
+            hello = "hola";
+            break;
+        case "Japanese":
+            hello = "konichiwa";
+            break;
+        case "French":
+            hello = "bonjour";
+            break;
+        case "Chinese":
+            hello = "nihao";
+            break;
+        case "Italian":
+            hello = "ciao";
+        default:
+            hello = "unknown";
+            console.log(`I'm sorry, I don't recognize that language. The languages that I recognize are Spanish, Japanese, French, Chinese, and Italian.`);
+    }
+    console.log(hello);
+}
+
+// Missing challenge #4?
 
 // 5: Write a function called addThree that takes three numbers as parameters, adds them  together and returns their sum.
 
+console.log(`Challenge #5`);
+
+console.log(addThree(3, 6, 21));
+
+function addThree(x, y, z) {
+    let sum = x + y + z;
+    return sum;
+}
 
 //______________________________________________________________________________
 // WooHoo Passed 5 challenges, 15 more to go!
 // _____________________________________________________________________________
 
-
 // 6: Write a function called stringPlusString that takes two string parameters, joins them together (aka concatenates them) and alerts the resulting string.
 
+console.log(`Challenge #6`);
+
+stringPlusString();
+
+function stringPlusString(str1, str2) {
+    str1 = prompt(`Please enter a string:`);
+    str2 = prompt(`Thank you! Now enter another string:`);
+    let space = " ";
+    let result = str1.concat(space, str2);
+    console.log(result);
+}
 
 // 7: Write a function called sentence that concatenates its four parameters, adds a period on the end of the resulting string and then returns that new string.
 
+console.log(`Challenge #7`);
 
-// 8: Write a function called twoNumbers that asks the user for two numbers (using prompt), adds them together and returns the sum.  Remember that prompt returns a string by default.  Use Number() to convert a string to a number.
+console.log(sentence("My","name","is","Jamie"));
 
+function sentence(a, b, c, d) {
+    let sentence = `${a} ${b} ${c} ${d}.`;
+    return sentence;
+}
 
-// 6: Declare a variable counter and assign the value 0 to it.  After that, declare a function called count that should add one to the variable counter every time it is run.  So if you executed the function three times, the value of counter would become 3 . 
+// 8: Write a function called twoNumbers that asks the user for two numbers (using prompt), adds them together and returns the sum. Remember that prompt returns a string by default. Use Number() to convert a string to a number.
+
+console.log(`Challenge #8`);
+
+console.log(twoNumbers());
+
+function twoNumbers(n1, n2) {
+    n1 = Number(prompt(`Please enter a number:`));
+    n2 = Number(prompt(`Thank you! Now please enter a second number:`));
+    let sum = n1 + n2;
+    return sum;
+}
+
+// 6: Declare a variable counter and assign the value 0 to it. After that, declare a function called count that should add one to the variable counter every time it is run. So if you executed the function three times, the value of counter would become 3. 
 // Hints:
-// it is important the you declare the variable counter before and not inside the function block for this to work.
-// you can add one to a variable by appending ++ after it so for example x++ would add 1 to the variable x
+// It is important that you declare the variable counter before and not inside the function block for this to work.
+// You can add one to a variable by appending ++ after it so for example x++ would add 1 to the variable x.
 
+console.log(`Challenge #6`);
 
+let i = 0;
 
+count(); // need to debug, results are not a number (NaN)
+count();
+count();
+
+function count(i) {
+    let count = i++;
+    count = Number(count);
+    console.log(count);
+}
 
 // 7: Write a function called textCalc that takes three parameters: a number, another number, and a string.  If the string is 'add', the function should add the numbers and return the sum.  If the string is 'multiply', the function should multiply.  Do the same for 'subtract' and 'divide' as well. 
 
+console.log(`Challenge #7`);
 
+textCalc(100, 4, "divide");
 
+function textCalc(num1, num2, str) {
+    let total;
+    switch (str) {
+        case "add":
+            total = num1 + num2;
+            break;
+        case "multiply":
+            total = num1 * num2;
+            break;
+        case "subtract":
+            total = num1 - num2;
+            break;
+        case "divide":
+            total = num1 / num2;
+    }
+    console.log(total);
+}
 
 // 8: Write a function called squareIt that takes a number and returns the square of that number.
 
-//Hint: So when this instruction says write a function "that takes  a number" that is another way of saying that the function should have a parameter that is a number.  You can call that parameter anything you want.  
+// Hint: So when this instruction says write a function "that takes a number" that is another way of saying that the function should have a parameter that is a number. You can call that parameter anything you want.  
 // So something like:
 // function squareIt(num) {
 // }
 // Math.sqrt takes the square root of a number and you want the square in other words the number times itself.
 // Make sure to return the square of the number in a return statement.
-// In this problem, everything should happen inside the function block.  You don't need anything declared outside of it.
+// In this problem, everything should happen inside the function block. You don't need anything declared outside of it.
 
+console.log(`Challenge #8`);
 
+console.log(squareIt(9));
 
-
+function squareIt(number) {
+    let square = Math.pow(number, 2);
+    return square;
+}
 
 // 9: Write a function called whichIsFirst that takes two string parameters and returns the string that comes first in the alphabet. If they are the same, you can obviously return either since they are the same! 
 // Hint: the greater than and less than operators work on strings!
 
+console.log(`Challenge #9`);
 
+function whichIsFirst(abc, def) {
 
+}
 
 // 10: Write a function called doMadlibs that takes three parameters: first is foreignCountry, second is adverb and third is adjective. You will use these parameters to fill in the blanks to the following sentence:
 
@@ -109,7 +226,13 @@ function placeName(name, place) {
 // _____________________________________________________________________________
     
 
-// 11: In a line after the existing assignment statement, use the typeof method to return the data type of the variable  mystery and assign it to a variable called type
+// 11: Write a function called sendMessage that takes a message as a parameter and "sends" that message using the alert method (as you did in an earlier exercise).
+
+// Now write another function called sendMessages that, calling the sendMessage function you wrote above 3 times, sends three messages:
+
+//     Hello
+//     How are you?
+//     Bye
 
 
 
