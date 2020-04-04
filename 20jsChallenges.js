@@ -6,9 +6,26 @@
 
 // 1: Declare four variables called eat, drink, sleep, and lives . Assign the values "chicken", "bubble tea", false, and 9 to each of them respectively.  The variable sleep should not be allowed to be assigned a different value.  Note the values are not all strings.
 
+console.log(`Challenge #1`);
+
+let eat = "chicken";
+let drink = "bubble tea";
+const sleep = false;
+lives = 9;
+
+console.log(eat, drink, sleep, lives);
 
 // 2: Write a function called placeName() that takes a name and a place and returns the phrase "[name] is from [place]".
 
+console.log(`Challenge #2`);
+
+placeName("Jamie", "Ohio");
+
+function placeName(name, place) {
+    this.name = name;
+    this.place = place;
+    console.log(`${this.name} is from ${this.place}.`);
+}
 
 // 3: Write a function called greetings that takes as a parameter a foreign language and returns the word for hello for that language. Here is the list of languages and the corresponding word you have to support:
 
